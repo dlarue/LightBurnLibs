@@ -3,13 +3,17 @@
 # if LightBurn update feature does not work, try installing libssl1.0-dev
 #sudo apt install libssl1.0-dev
 
+HERE=`pwd`
+
 lbDIR=~/.local/share/LightBurn
 lbCMD=$lbDIR/LightBurn
 lbLibsDIR=~/LightBurnLibs
 gstLibs=gstreamer-1.0
 
 if [ ! -d $lbLibsDIR/$gstLibs ] ; then
-  git clone http://github.com/dlarue/LightBurnLibs $libLibsDIR
+  cd
+  git clone http://github.com/dlarue/LightBurnLibs
+  cd $HERE
 fi
 
 GST_PLUGIN_SYSTEM_PATH=${lbLibsDIR}/${gstLibs} $lbCMD
