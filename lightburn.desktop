@@ -3,7 +3,7 @@
 Type=Application
 Name=LightBurn 0.9.24
 Comment=Better Software For Laser Cutters
-Exec=/home/YourUserID/LightBurnLibs/lightburn
-Icon=/home/YourUserID/.local/share/LightBurn/LightBurn.png
+Exec=/home/$USER/LightBurnLibs/lightburn %u
+Icon=/home/$USER/.local/share/LightBurn/LightBurn.png
 #Categories=Engineering;
 Categories=Graphics;
