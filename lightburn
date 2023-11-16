@@ -6,7 +6,20 @@
 HERE=`pwd`
 
 lbDIR=~/.local/share/LightBurn
-lbCMD=$lbDIR/LightBurn
+
+if [ "$1" == "" ] ; then
+  #echo :$1: parm DOES NOT exist
+  lbCMD=$lbDIR/LightBurn
+else
+  if [ -f $1 ] ; then
+    #echo parm exists, file exists
+    lbCMD="$lbDIR/LightBurn $1"
+  else
+    echo parm exists, file $1 does not exist
+    lbCMD=$lbDIR/LightBurn
+  fi
+fi
+
 lbLibsDIR=~/LightBurnLibs
 gstLibs=gstreamer-1.0
 
